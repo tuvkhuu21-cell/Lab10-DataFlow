@@ -118,15 +118,15 @@ DU хосыг тодорхойлохдоо тухайн definition-ээс use х
 
 | Хувьсагч | Def | Use | Төрөл | Def-clear зам | Тестийн ID | Хамрагдсан |
 |---|---|---|---|---|---|---|
-| present | 35 | 40 | c-use | 35→38(T)→39(T)→40 | B4-д бөглөнө | — |
-| present | 35 | 50 | p-use | 35→38(F)→49→50 | B4-д бөглөнө | — |
-| present | 40 | 40 | c-use | 40→41→42→38(T)→39(T)→40 | B4-д бөглөнө | — |
-| present | 40 | 50 | p-use | 40→41→42→38(F)→49→50 | B4-д бөглөнө | — |
-| attendance | 31 | 32 | p-use | 31→32 | B4-д бөглөнө | — |
-| attendance | 31 | 38 | p-use | 31→32(F)→35→36→37→38 | B4-д бөглөнө | — |
-| threshold | 31 | 32 | p-use | 31→32a(F)→32b | B4-д бөглөнө | — |
-| threshold | 31 | 50 | p-use | 31→32(F)→35→36→37→38(F)→49→50 | B4-д бөглөнө | — |
-| a | 38 | 39 | p-use | 38(элемент авах)→39 | B4-д бөглөнө | — |
+| present | 35 | 40 | c-use | 35→38(T)→39(T)→40 | bonusAllDefsNoReward | Тийм |
+| present | 35 | 50 | p-use | 35→38(F)→49→50 | bonusEmptyAttendance | Тийм |
+| present | 40 | 40 | c-use | 40→41→42→38(T)→39(T)→40 | bonusAllDefsFullReward | Тийм |
+| present | 40 | 50 | p-use | 40→41→42→38(F)→49→50 | bonusAllDefsNoReward | Тийм |
+| attendance | 31 | 32 | p-use | 31→32 | bonusNullAttendance | Тийм |
+| attendance | 31 | 38 | p-use | 31→32(F)→35→36→37→38 | bonusEmptyAttendance | Тийм |
+| threshold | 31 | 32 | p-use | 31→32a(F)→32b | bonusNegativeThreshold | Тийм |
+| threshold | 31 | 50 | p-use | 31→32(F)→35→36→37→38(F)→49→50 | bonusAllDefsNoReward | Тийм |
+| a | 38 | 39 | p-use | 38(элемент авах)→39 | bonusAllDefsNoReward | Тийм |
 
 **Тайлбар:**
 
@@ -141,13 +141,13 @@ DU хосыг тодорхойлохдоо тухайн definition-ээс use х
 
 | Хувьсагч | Def | Use | Төрөл | Def-clear зам | Тестийн ID | Хамрагдсан |
 |---|---|---|---|---|---|---|
-| streak | 36 | 41 | c-use | 36→38(T)→39(T)→40→41 | B4-д бөглөнө | — |
-| streak | 41 | 41 | c-use | 41→42→38(T)→39(T)→40→41 | B4-д бөглөнө | — |
-| streak | 46 | 41 | c-use | 46→38(T)→39(T)→40→41 | B4-д бөглөнө | — |
-| streak | 41 | 42 | p-use | 41→42 | B4-д бөглөнө | — |
+| streak | 36 | 41 | c-use | 36→38(T)→39(T)→40→41 | bonusAllDefsNoReward | Тийм |
+| streak | 41 | 41 | c-use | 41→42→38(T)→39(T)→40→41 | bonusAllDefsFullReward | Тийм |
+| streak | 46 | 41 | c-use | 46→38(T)→39(T)→40→41 | bonusAllDefsNoReward | Тийм |
+| streak | 41 | 42 | p-use | 41→42 | bonusAllDefsFullReward | Тийм |
 | streak | 36 | 42 | p-use | Def-clear замгүй | — | Биелэхгүй |
 | streak | 46 | 42 | p-use | Def-clear замгүй | — | Биелэхгүй |
-| streak | 41 | 43 | c-use | 41→42(T)→43 | B4-д бөглөнө | — |
+| streak | 41 | 43 | c-use | 41→42(T)→43 | bonusAllDefsFullReward | Тийм |
 
 **Kill анализ:**
 
@@ -161,10 +161,10 @@ DU хосыг тодорхойлохдоо тухайн definition-ээс use х
 
 | Хувьсагч | Def | Use | Төрөл | Def-clear зам | Тестийн ID | Хамрагдсан |
 |---|---|---|---|---|---|---|
-| best | 37 | 42 | p-use | 37→38(T)→39(T)→40→41→42 | B4-д бөглөнө | — |
-| best | 37 | 53 | p-use | 37→38(F)→49→50→53 | B4-д бөглөнө | — |
-| best | 43 | 42 | p-use | 43→38(T)→39(T)→40→41→42 | B4-д бөглөнө | — |
-| best | 43 | 53 | p-use | 43→38(F)→49→50→53 | B4-д бөглөнө | — |
+| best | 37 | 42 | p-use | 37→38(T)→39(T)→40→41→42 | bonusAllDefsFullReward | Тийм |
+| best | 37 | 53 | p-use | 37→38(F)→49→50→53 | bonusEmptyAttendance | Тийм |
+| best | 43 | 42 | p-use | 43→38(T)→39(T)→40→41→42 | bonusAllDefsFullReward | Тийм |
+| best | 43 | 53 | p-use | 43→38(F)→49→50→53 | bonusAllDefsFullReward | Тийм |
 
 **Тайлбар:**
 
@@ -177,11 +177,11 @@ DU хосыг тодорхойлохдоо тухайн definition-ээс use х
 
 | Хувьсагч | Def | Use | Төрөл | Def-clear зам | Тестийн ID | Хамрагдсан |
 |---|---|---|---|---|---|---|
-| score | 49 | 54 | c-use | 49→50(F)→53(T)→54 | B4-д бөглөнө | — |
-| score | 49 | 56 | c-use | 49→50(F)→53(F)→56 | B4-д бөглөнө | — |
-| score | 51 | 54 | c-use | 51→53(T)→54 | B4-д бөглөнө | — |
-| score | 51 | 56 | c-use | 51→53(F)→56 | B4-д бөглөнө | — |
-| score | 54 | 56 | c-use | 54→56 | B4-д бөглөнө | — |
+| score | 49 | 54 | c-use | 49→50(F)→53(T)→54 | bonusLongStreakBelowThreshold | Тийм |
+| score | 49 | 56 | c-use | 49→50(F)→53(F)→56 | bonusAllDefsNoReward | Тийм |
+| score | 51 | 54 | c-use | 51→53(T)→54 | bonusAllDefsFullReward | Тийм |
+| score | 51 | 56 | c-use | 51→53(F)→56 | bonusAttendanceThresholdOnly | Тийм |
+| score | 54 | 56 | c-use | 54→56 | bonusAllDefsFullReward | Тийм |
 
 **Тайлбар:**
 
@@ -190,4 +190,21 @@ DU хосыг тодорхойлохдоо тухайн definition-ээс use х
 - 51→54 хос нь хоёр урамшууллын нөхцөл хоёулаа үнэн үед биелнэ.
 - 51→56 хос нь зөвхөн ирцийн босго хангагдсан үед биелнэ.
 - 54→56 хос нь дараалсан ирцийн нэмэлт 3 оноо олгогдсон үед биелнэ.
+
+
+#### B3.5. Predicate-use салааны хамралт
+
+| Мөр | Нөхцөл | T салаа | F салаа |
+|---|---|---|---|
+| 32a | attendance == null | bonusNullAttendance | bonusNegativeThreshold |
+| 32b | threshold < 0 | bonusNegativeThreshold | bonusAllDefsNoReward |
+| 38 | for-each давталт | bonusAllDefsFullReward | bonusEmptyAttendance |
+| 39 | a > 0 | bonusAllDefsFullReward | bonusNoAttendance |
+| 42 | streak > best | bonusAllDefsFullReward | bonusAllDefsNoReward |
+| 50 | present >= threshold | bonusAllDefsFullReward | bonusAllDefsNoReward |
+| 53 | best >= 5 | bonusAllDefsFullReward | bonusAllDefsNoReward |
+
+32-р мөрийн OR нөхцөл short-circuit үнэлгээтэй. `attendance == null` үед `threshold < 0` нөхцөлийг шалгахгүй.
+
+JaCoCo-ийн branch coverage 16/16 болсон. Энэ хүснэгт нь нөхцөлийн салааны хамралтыг харуулна. DU хосуудын def-clear зам болон тестийн нэрсийг B3.1–B3.4 хүснэгтүүдэд тусгасан.
 
