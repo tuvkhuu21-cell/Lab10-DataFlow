@@ -58,5 +58,11 @@ class BonusTest {
         assertEquals(0, DataFlowTargets.bonus(
                 new int[]{}, 1));
     }
+
+    @Test
+    void bonusSeparatedAttendanceNoStreakReward() {
+        assertEquals(0, DataFlowTargets.bonus(
+            new int[]{1, 0, 1, 0, 1, 0, 1, 0, 1}, 6));
+    }
 }
 
