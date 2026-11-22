@@ -127,7 +127,7 @@ CFG зураг: **`cfg-bonus.png`**
 
 **Infeasible хосууд:** `streak`-ийн 36→42 болон 46→42 хосууд def-clear замгүй. Учир нь 42-р мөрөнд хүрэхээс өмнө 41-р мөрөнд `streak` дахин тодорхойлогдоно.
 
-**Kill анализ:** 41-р мөр `streak`-ийг нэмэгдүүлж, 46-р мөр тэглэнэ. 43-р мөр `best`-ийг шинэчилнэ. `present`-ийн 40→40 болон `streak`-ийн 41→41 хосууд давталтын өөр өөр гүйцэтгэлийн хооронд үүснэ.
+**Kill анализ:** 41-р мөр `streak`-ийг нэмэгдүүлж, 46-р мөр тэглэнэ. 43-р мөр `best`-ийг шинэчилнэ. Мөн 51-р мөр `score`-ийг дахин тодорхойлж, 49-р мөрийн definition-ийг kill хийнэ. `present`-ийн 40→40 болон `streak`-ийн 41→41 хосууд давталтын өөр өөр гүйцэтгэлийн хооронд үүснэ.
 
 ### B4. Predicate-use салааны хамралт
 
@@ -150,6 +150,8 @@ CFG зураг: **`cfg-bonus.png`**
 | All-defs | 2 | 6 | 14/16 |
 | All-DU-pairs | 8 | 12 | 16/16 |
 
+**All-defs-ийн үндэслэл:** 49-р мөрийн `score`-ийг use-д хүргэхийн тулд 51-р мөрийг алгасах хэрэгтэй. Харин 51-р мөрийн `score`-ийг use-д хүргэхийн тулд тухайн мөр заавал ажиллах ёстой. Энэ хоёр зам нэг гүйцэтгэлд зэрэг биелэх боломжгүй тул хамгийн багадаа 2 Bonus тест шаардлагатай.
+
 **All-defs нотлох файлууд:**
 - `results/mvn-verify-alldefs.txt`
 - `results/jacoco-alldefs.csv`
@@ -160,13 +162,15 @@ CFG зураг: **`cfg-bonus.png`**
 
 All-defs үе шатанд definition-үүдийн хэрэглээг шалгасан. All-DU-pairs шатанд нэмэлт зам, нөхцөлүүдийг шалгаж, branch coverage-ийг 100%-д хүргэсэн.
 
+**Branch vs DU:** All-defs үед branch coverage 14/16 байсан. Учир нь эхний 2 тест 32-р мөрийн null болон сөрөг threshold-ийн салааг шалгаагүй. Эдгээрт `bonusNullAttendance`, `bonusNegativeThreshold` тестүүдийг нэмбэл branch 16/16 болно. Гэхдээ `score`-ийн 49→54 DU хос хамрагдахгүй хэвээр байна. Учир нь 50-р мөр худал, 53-р мөр үнэн байх замыг энэ 4 тест шалгаагүй. Үүнийг `bonusLongStreakBelowThreshold` тестээр шалгасан. Тиймээс branch 100% болсон ч бүх DU хос хамрагдсан гэсэн үг биш.
+
 ## 4. Part C — Mutation Testing
 
 ### C1. Mutation-ийн үр дүн
 
 | Mutation | Өөрчлөлт | Тестийн үр дүн | Статус |
 |---|---|---|---|
-| M1 | `streak = streak + 1;` хассан | 12 тестээс 2 унасан | KILLED |
+| M1 | `streak = streak + 1;` хассан | `bonusAllDefsFullReward`: expected 8, was 5; `bonusLongStreakBelowThreshold`: expected 3, was 0 | KILLED |
 | M2 | `best = streak;` нөхцөлтэй хэсгийг `best = present;` болгосон | Эхний 12 тест амжилттай, шинэ тест нэмэхэд 1 унасан | KILLED |
 | M3 | `int total = present + best;` нэмсэн | 13 тест амжилттай | SURVIVED |
 
